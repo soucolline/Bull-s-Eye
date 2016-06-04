@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240639201D03307B00C773C0 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406391F1D03307B00C773C0 /* FirstPageViewController.swift */; };
+		241A9BDC1D02E1E000CCCF18 /* goodfoot.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 241A9BDB1D02E1E000CCCF18 /* goodfoot.ttf */; };
 		24BB3DC61CFB900F00B0A38E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BB3DC51CFB900F00B0A38E /* AppDelegate.swift */; };
 		24BB3DC81CFB900F00B0A38E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BB3DC71CFB900F00B0A38E /* ViewController.swift */; };
 		24BB3DCB1CFB900F00B0A38E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24BB3DC91CFB900F00B0A38E /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2406391F1D03307B00C773C0 /* FirstPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
+		241A9BDB1D02E1E000CCCF18 /* goodfoot.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = goodfoot.ttf; path = ../../../Library/Fonts/goodfoot.ttf; sourceTree = "<group>"; };
 		24BB3DC21CFB900F00B0A38E /* Bull's Eye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bull's Eye.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BB3DC51CFB900F00B0A38E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24BB3DC71CFB900F00B0A38E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		241A9BDD1D02E1E600CCCF18 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				241A9BDB1D02E1E000CCCF18 /* goodfoot.ttf */,
+			);
+			name = Fonts;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		24BB3DB91CFB900F00B0A38E = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +69,12 @@
 			children = (
 				24BB3DC51CFB900F00B0A38E /* AppDelegate.swift */,
 				24BB3DC71CFB900F00B0A38E /* ViewController.swift */,
+				2406391F1D03307B00C773C0 /* FirstPageViewController.swift */,
 				24BB3DC91CFB900F00B0A38E /* Main.storyboard */,
 				24BB3DCC1CFB900F00B0A38E /* Assets.xcassets */,
 				24BB3DCE1CFB900F00B0A38E /* LaunchScreen.storyboard */,
 				24BB3DD11CFB900F00B0A38E /* Info.plist */,
+				241A9BDD1D02E1E600CCCF18 /* Fonts */,
 			);
 			path = "Bull's Eye";
 			sourceTree = "<group>";
@@ -123,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24BB3DD01CFB900F00B0A38E /* LaunchScreen.storyboard in Resources */,
+				241A9BDC1D02E1E000CCCF18 /* goodfoot.ttf in Resources */,
 				24BB3DCD1CFB900F00B0A38E /* Assets.xcassets in Resources */,
 				24BB3DCB1CFB900F00B0A38E /* Main.storyboard in Resources */,
 			);
@@ -135,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				240639201D03307B00C773C0 /* FirstPageViewController.swift in Sources */,
 				24BB3DC81CFB900F00B0A38E /* ViewController.swift in Sources */,
 				24BB3DC61CFB900F00B0A38E /* AppDelegate.swift in Sources */,
 			);
@@ -286,6 +303,7 @@
 				24BB3DD61CFB900F00B0A38E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

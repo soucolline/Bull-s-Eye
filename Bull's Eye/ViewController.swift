@@ -90,7 +90,10 @@ class ViewController: UIViewController {
         let yesAction = UIAlertAction(title: "Yes", style: .Default, handler: { (alert:UIAlertAction) in
             self.restartGame();
         });
-        let noAction = UIAlertAction(title: "No", style: .Destructive, handler: nil);
+        let noAction = UIAlertAction(title: "No", style: .Destructive, handler: {
+            (alert:UIAlertAction) in
+            self.navigationController?.popToRootViewControllerAnimated(true);
+        });
         
         alert.addAction(yesAction);
         alert.addAction(noAction);
