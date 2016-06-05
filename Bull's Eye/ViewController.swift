@@ -123,6 +123,12 @@ class ViewController: UIViewController {
         goalLabel.text = String(objective);
         roundLabel.text = String(round);
         lifePoints = 100;
+        
+        if !SharedData.sharedInstance.isDebugOn {
+            debugLabel.hidden = true;
+        } else {
+            debugLabel.text = String(Int(slider.value));
+        }
     }
     
     override func viewDidLoad() {

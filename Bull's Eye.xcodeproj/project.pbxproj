@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		240639201D03307B00C773C0 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406391F1D03307B00C773C0 /* FirstPageViewController.swift */; };
+		240639221D0340B300C773C0 /* optionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240639211D0340B300C773C0 /* optionsViewController.swift */; };
+		240639241D0358B600C773C0 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240639231D0358B600C773C0 /* Difficulty.swift */; };
+		240639261D03595800C773C0 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240639251D03595800C773C0 /* SharedData.swift */; };
 		241A9BDC1D02E1E000CCCF18 /* goodfoot.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 241A9BDB1D02E1E000CCCF18 /* goodfoot.ttf */; };
 		24BB3DC61CFB900F00B0A38E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BB3DC51CFB900F00B0A38E /* AppDelegate.swift */; };
 		24BB3DC81CFB900F00B0A38E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BB3DC71CFB900F00B0A38E /* ViewController.swift */; };
@@ -18,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		2406391F1D03307B00C773C0 /* FirstPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
+		240639211D0340B300C773C0 /* optionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = optionsViewController.swift; sourceTree = "<group>"; };
+		240639231D0358B600C773C0 /* Difficulty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		240639251D03595800C773C0 /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		241A9BDB1D02E1E000CCCF18 /* goodfoot.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = goodfoot.ttf; path = ../../../Library/Fonts/goodfoot.ttf; sourceTree = "<group>"; };
 		24BB3DC21CFB900F00B0A38E /* Bull's Eye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bull's Eye.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BB3DC51CFB900F00B0A38E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +76,9 @@
 				24BB3DC51CFB900F00B0A38E /* AppDelegate.swift */,
 				24BB3DC71CFB900F00B0A38E /* ViewController.swift */,
 				2406391F1D03307B00C773C0 /* FirstPageViewController.swift */,
+				240639211D0340B300C773C0 /* optionsViewController.swift */,
+				240639231D0358B600C773C0 /* Difficulty.swift */,
+				240639251D03595800C773C0 /* SharedData.swift */,
 				24BB3DC91CFB900F00B0A38E /* Main.storyboard */,
 				24BB3DCC1CFB900F00B0A38E /* Assets.xcassets */,
 				24BB3DCE1CFB900F00B0A38E /* LaunchScreen.storyboard */,
@@ -151,7 +160,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				240639261D03595800C773C0 /* SharedData.swift in Sources */,
 				240639201D03307B00C773C0 /* FirstPageViewController.swift in Sources */,
+				240639221D0340B300C773C0 /* optionsViewController.swift in Sources */,
+				240639241D0358B600C773C0 /* Difficulty.swift in Sources */,
 				24BB3DC81CFB900F00B0A38E /* ViewController.swift in Sources */,
 				24BB3DC61CFB900F00B0A38E /* AppDelegate.swift in Sources */,
 			);
