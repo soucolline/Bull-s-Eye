@@ -9,8 +9,8 @@
 import Foundation
 
 
-enum Difficulty {
-    case Easy;
-    case Medium;
-    case Difficult;
+enum Difficulty:String {
+    case Easy = "Easy";
+    case Medium = "Medium";
+    case Difficult = "Difficult";
 }

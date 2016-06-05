@@ -30,7 +30,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func debugValueChange(sender: UISlider) {
-        debugLabel.text = String(Int(floor(slider.value)));
+        //debugLabel.text = String(Int(floor(slider.value)));
+        debugLabel.text = String(SharedData.sharedInstance.gameDifficulty);
     }
     
     
