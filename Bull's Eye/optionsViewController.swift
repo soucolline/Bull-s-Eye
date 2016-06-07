@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     func hideKeyboardWhenTappedArround() {
-        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard");
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard));
         view.addGestureRecognizer(tap);
     }
     
@@ -34,9 +34,9 @@ class optionsViewController: UITableViewController, UITextFieldDelegate, UIPicke
     
     @IBAction func debugSwitch(sender: UISwitch) {
         if sender.on {
-            SharedData.sharedInstance.isDebugOn = true;
+            SharedData.isDebugOn = true;
         } else {
-            SharedData.sharedInstance.isDebugOn = false;
+            SharedData.isDebugOn = false;
         }
     }
     
@@ -57,13 +57,14 @@ class optionsViewController: UITableViewController, UITextFieldDelegate, UIPicke
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return difficultyOptions[row].rawValue;
+        return difficultyOptions[row].getName();
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        difficultyOutlet.text = difficultyOptions[row].rawValue;
-        SharedData.sharedInstance.gameDifficulty = difficultyOptions[row];
+        difficultyOutlet.text = difficultyOptions[row].getName();
+        SharedData.gameDifficulty = difficultyOptions[row];
     }
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
@@ -71,10 +72,10 @@ class optionsViewController: UITableViewController, UITextFieldDelegate, UIPicke
         self.navigationController?.navigationBarHidden = false;
         self.navigationController?.navigationBar.topItem?.title = "Options";
         
-        debugSwitchOutlet.on = SharedData.sharedInstance.isDebugOn;
+        debugSwitchOutlet.on = SharedData.isDebugOn;
         
         textFieldOutlet.tintColor = UIColor.clearColor();
-        difficultyOutlet.text = SharedData.sharedInstance.gameDifficulty.rawValue;
+        difficultyOutlet.text = SharedData.gameDifficulty.getName();
     }
     
     override func viewDidLoad() {
@@ -87,7 +88,9 @@ class optionsViewController: UITableViewController, UITextFieldDelegate, UIPicke
         
         self.hideKeyboardWhenTappedArround();
         
-        print(String(SharedData.sharedInstance.gameDifficulty));
+        print(String(SharedData.gameDifficulty));
+        
+        self.difficultyPicker.selectRow(SharedData.gameDifficulty.rawValue, inComponent: 0, animated: true);
 
         // Do any additional setup after loading the view.
     }

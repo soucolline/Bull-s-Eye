@@ -10,13 +10,13 @@ import Foundation
 
 
 class SharedData {
-    static let sharedInstance = SharedData();
+//    static let sharedInstance = SharedData();
     
-    var isDebugOn:Bool;
-    var gameDifficulty:Difficulty;
+    static var isDebugOn:Bool = false
+    static var gameDifficulty:Difficulty = .Easy
     
-    init () {
-        isDebugOn = false;
-        gameDifficulty = Difficulty.Easy;
-    }
+//    init () {
+//        isDebugOn = false;
+//        gameDifficulty = Difficulty.Easy;
+//    }
 }

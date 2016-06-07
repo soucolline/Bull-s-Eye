@@ -8,12 +8,27 @@
 
 import UIKit
 
+extension Double {
+    func isGameSpeedLimit(limit:Double) -> Double {
+        var num = limit;
+        if num <= 0.003 {
+            num = 0.002;
+        }
+        
+        return num;
+    }
+}
+
 class ViewController: UIViewController {
 
     
     var objective:Int = 0;
     var lifePoints:Int = 0;
     var round:Int = 1;
+    
+    var timer:NSTimer?;
+    var sliderSpeed:Double = 0.01
+    var sliderMovement:String = "right";
     
     
     @IBOutlet weak var goalLabel: UILabel!
@@ -26,12 +41,18 @@ class ViewController: UIViewController {
     
     
     @IBAction func stopPressed(sender: UIButton) {
+        if timer != nil {
+            timer?.invalidate();
+        }
+        
         getPoints(Int(slider.value), objective: objective);
+        
+        print(sliderSpeed);
     }
     
     @IBAction func debugValueChange(sender: UISlider) {
-        //debugLabel.text = String(Int(floor(slider.value)));
-        debugLabel.text = String(SharedData.sharedInstance.gameDifficulty);
+        debugLabel.text = String(Int(floor(slider.value)));
+        //debugLabel.text = String(SharedData.gameDifficulty);
     }
     
     
@@ -54,6 +75,14 @@ class ViewController: UIViewController {
         
         let alert = UIAlertController(title: "Result", message: result, preferredStyle: .Alert);
         let alertAction = UIAlertAction(title: "OK", style: .Default, handler: { (alert:UIAlertAction) in
+            if self.timer != nil {
+                if SharedData.gameDifficulty == Difficulty.Difficult {
+                    self.sliderSpeed = self.sliderSpeed / 1.5;
+                }
+                self.sliderSpeed = self.sliderSpeed.isGameSpeedLimit(self.sliderSpeed);
+                self.scheduleTimer();
+            }
+            
             self.removeLifePoints(self.lifePoints, difference: abs(sliderValue - objective));
         });
         
@@ -83,6 +112,10 @@ class ViewController: UIViewController {
     }
     
     func lostGame() {
+        if timer != nil {
+            timer?.invalidate();
+        }
+        
         lifePoints = 0;
         lifePointsLabel.text = String(lifePoints);
         stopButton.enabled = !stopButton.enabled;
@@ -105,6 +138,7 @@ class ViewController: UIViewController {
     func restartGame() {
         lifePoints = 100;
         round = 1;
+        sliderSpeed = 0.01;
         objective = generateRandomNumber();
         
         lifePointsLabel.text = String(lifePoints);
@@ -112,9 +146,39 @@ class ViewController: UIViewController {
         goalLabel.text = String(objective);
         
         stopButton.enabled = !stopButton.enabled;
+        
+        if timer != nil {
+            scheduleTimer();
+        }
     }
     
     
+    func scheduleTimer() {
+        timer = NSTimer.scheduledTimerWithTimeInterval(sliderSpeed, target: self, selector: #selector(ViewController.moveSlider), userInfo: nil, repeats: true);
+    }
+    
+    func moveSlider() {
+        if sliderMovement == "right" {
+            UIView.animateWithDuration(sliderSpeed, animations: {
+                self.slider.setValue((self.slider.value + 1), animated: false);
+            });
+            
+            if slider.value >= 100.0 {
+                sliderMovement = "left";
+            }
+        } else {
+            UIView.animateWithDuration(sliderSpeed, animations: {
+                self.slider.setValue((self.slider.value - 1), animated: false);
+            });
+            
+            if slider.value <= 0 {
+                sliderMovement = "right";
+            }
+        }
+        
+        
+        //slider.setValue((slider.value + 10), animated: true);
+    }
     
     
     override func viewWillAppear(animated: Bool) {
@@ -125,7 +189,7 @@ class ViewController: UIViewController {
         roundLabel.text = String(round);
         lifePoints = 100;
         
-        if !SharedData.sharedInstance.isDebugOn {
+        if !SharedData.isDebugOn {
             debugLabel.hidden = true;
         } else {
             debugLabel.text = String(Int(slider.value));
@@ -134,7 +198,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated);
+        
+        if SharedData.gameDifficulty != Difficulty.Easy {
+            scheduleTimer();
+        }
+        
+        stopButton.enabled = true;
     }
 
     override func didReceiveMemoryWarning() {
