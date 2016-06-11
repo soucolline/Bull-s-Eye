@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FirstPageViewController: UIViewController {
 
@@ -55,6 +56,7 @@ class FirstPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(Realm.Configuration.defaultConfiguration.fileURL);
 
         // Do any additional setup after loading the view.
     }
