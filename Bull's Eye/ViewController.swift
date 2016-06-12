@@ -128,8 +128,10 @@ class ViewController: UIViewController {
             (alert:UIAlertAction) in
             self.navigationController?.popToRootViewControllerAnimated(true);
         });
+        let saveAction = UIAlertAction(title: "Save score", style: .Default, handler: nil)
         
         alert.addAction(yesAction);
+        alert.addAction(saveAction);
         alert.addAction(noAction);
         
         presentViewController(alert, animated: true, completion: nil);

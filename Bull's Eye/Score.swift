@@ -13,7 +13,7 @@ import RealmSwift
 class Score: Object {
     
     dynamic var rounds = 0;
-  
+    dynamic var playerName:String = "";
     
 }
 

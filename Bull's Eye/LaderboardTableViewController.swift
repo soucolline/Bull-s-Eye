@@ -15,6 +15,7 @@ class LaderboardTableViewController: UITableViewController {
     
     
     var scores:Results<Score>!;
+    let playerNames:[String] = ["Thomas", "Clara", "Philippe"];
     
     
     override func viewDidLoad() {
@@ -25,6 +26,9 @@ class LaderboardTableViewController: UITableViewController {
         
         scores = realm.objects(Score.self).sorted("rounds", ascending: false);
         print(scores.count);
+        
+        
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -57,6 +61,8 @@ class LaderboardTableViewController: UITableViewController {
         let scoreItem = scores[indexPath.row]
         
         cell.textLabel?.text = String(scoreItem.rounds);
+        cell.detailTextLabel?.text = scoreItem.playerName;
+        
 
         return cell
     }
