@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 extension Double {
     func isGameSpeedLimit(limit:Double) -> Double {
@@ -19,7 +20,7 @@ extension Double {
     }
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AddNewScoreTableViewControllerDelegate {
 
     
     var objective:Int = 0;
@@ -128,7 +129,10 @@ class ViewController: UIViewController {
             (alert:UIAlertAction) in
             self.navigationController?.popToRootViewControllerAnimated(true);
         });
-        let saveAction = UIAlertAction(title: "Save score", style: .Default, handler: nil)
+        let saveAction = UIAlertAction(title: "Save score", style: .Default, handler: {
+            (alert:UIAlertAction) in
+            self.performSegueWithIdentifier("newScoreSegue", sender: self);
+        })
         
         alert.addAction(yesAction);
         alert.addAction(saveAction);
@@ -141,13 +145,14 @@ class ViewController: UIViewController {
         lifePoints = 100;
         round = 1;
         sliderSpeed = 0.01;
+        slider.value = 50.0;
         objective = generateRandomNumber();
         
         lifePointsLabel.text = String(lifePoints);
         roundLabel.text = String(round);
         goalLabel.text = String(objective);
         
-        stopButton.enabled = !stopButton.enabled;
+        stopButton.enabled = true;
         
         if timer != nil {
             scheduleTimer();
@@ -180,6 +185,27 @@ class ViewController: UIViewController {
         
         
         //slider.setValue((slider.value + 10), animated: true);
+    }
+    
+    
+    // MARK: - AddNewScoreTableViewControllerDelegate
+    
+    func addNewScoreTableViewControllerDidCancel(controller: AddNewScoreTableViewController) {
+        dismissViewControllerAnimated(true, completion: { Void in
+            self.restartGame();
+        });
+    }
+    
+    func addNewScoreTableViewController(controller: AddNewScoreTableViewController, didFinishAddingScore score: Score) {
+        let realm = try! Realm();
+        
+        try! realm.write({
+            realm.add(score);
+        })
+        
+        dismissViewControllerAnimated(true, completion: { Void in
+            self.restartGame();
+        })
     }
     
     
@@ -218,6 +244,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "newScoreSegue" {
+            let nav = segue.destinationViewController as! UINavigationController;
+            let destinationVC = nav.topViewController as! AddNewScoreTableViewController;
+            destinationVC.score = round;
+            
+            destinationVC.delegate = self;
+        }
+    }
 
 }
 

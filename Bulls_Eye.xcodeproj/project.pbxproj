@@ -18,6 +18,7 @@
 		24BB3DCB1CFB900F00B0A38E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24BB3DC91CFB900F00B0A38E /* Main.storyboard */; };
 		24BB3DCD1CFB900F00B0A38E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24BB3DCC1CFB900F00B0A38E /* Assets.xcassets */; };
 		24BB3DD01CFB900F00B0A38E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24BB3DCE1CFB900F00B0A38E /* LaunchScreen.storyboard */; };
+		24DCFCDF1D0DE1020067D18B /* AddNewScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCFCDE1D0DE1020067D18B /* AddNewScoreTableViewController.swift */; };
 		24EB35951D0C3172006B68AC /* LaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB35941D0C3172006B68AC /* LaderboardTableViewController.swift */; };
 		393F9D9261EBF1E9F1931711 /* Pods_Bulls_Eye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9685438989C076513115E752 /* Pods_Bulls_Eye.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		24BB3DCC1CFB900F00B0A38E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24BB3DCF1CFB900F00B0A38E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24BB3DD11CFB900F00B0A38E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24DCFCDE1D0DE1020067D18B /* AddNewScoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewScoreTableViewController.swift; sourceTree = "<group>"; };
 		24EB35941D0C3172006B68AC /* LaderboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaderboardTableViewController.swift; sourceTree = "<group>"; };
 		5B92015DEE81F5F7734C8165 /* Pods-Bulls_Eye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulls_Eye.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulls_Eye/Pods-Bulls_Eye.release.xcconfig"; sourceTree = "<group>"; };
 		7423FF3217B0B465F942CCEB /* Pods-Bulls_Eye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulls_Eye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulls_Eye/Pods-Bulls_Eye.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				24BB3DC71CFB900F00B0A38E /* ViewController.swift */,
 				2406391F1D03307B00C773C0 /* FirstPageViewController.swift */,
 				24EB35941D0C3172006B68AC /* LaderboardTableViewController.swift */,
+				24DCFCDE1D0DE1020067D18B /* AddNewScoreTableViewController.swift */,
 				240639211D0340B300C773C0 /* optionsViewController.swift */,
 				240639231D0358B600C773C0 /* Difficulty.swift */,
 				243C61581D0C484800895F49 /* Score.swift */,
@@ -245,6 +248,7 @@
 				240639201D03307B00C773C0 /* FirstPageViewController.swift in Sources */,
 				243C61591D0C484800895F49 /* Score.swift in Sources */,
 				240639221D0340B300C773C0 /* optionsViewController.swift in Sources */,
+				24DCFCDF1D0DE1020067D18B /* AddNewScoreTableViewController.swift in Sources */,
 				240639241D0358B600C773C0 /* Difficulty.swift in Sources */,
 				24EB35951D0C3172006B68AC /* LaderboardTableViewController.swift in Sources */,
 				24BB3DC81CFB900F00B0A38E /* ViewController.swift in Sources */,
