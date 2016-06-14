@@ -34,6 +34,8 @@ class FirstPageViewController: UIViewController {
         leaderboardBtnOutlet.layer.shadowOffset = CGSizeMake(0, 2.0);
     }
     
+    @IBAction func returnFromSegueActions(sender:UIStoryboardSegue) {}
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
@@ -57,6 +59,15 @@ class FirstPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(Realm.Configuration.defaultConfiguration.fileURL);
+        
+        let background = UIImage(named: "background");
+        
+        let imageView = UIImageView(frame: view.bounds);
+        imageView.contentMode = UIViewContentMode.ScaleAspectFill;
+        imageView.image = background;
+        imageView.center = view.center;
+        view.addSubview(imageView);
+        self.view.sendSubviewToBack(imageView);
 
         // Do any additional setup after loading the view.
     }

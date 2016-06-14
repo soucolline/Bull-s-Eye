@@ -127,7 +127,7 @@ class ViewController: UIViewController, AddNewScoreTableViewControllerDelegate {
         });
         let noAction = UIAlertAction(title: "No", style: .Destructive, handler: {
             (alert:UIAlertAction) in
-            self.navigationController?.popToRootViewControllerAnimated(true);
+            self.performSegueWithIdentifier("UnwindSegueIdentifier", sender: self);
         });
         let saveAction = UIAlertAction(title: "Save score", style: .Default, handler: {
             (alert:UIAlertAction) in
@@ -217,6 +217,9 @@ class ViewController: UIViewController, AddNewScoreTableViewControllerDelegate {
         roundLabel.text = String(round);
         lifePoints = 100;
         
+        let thumbImage = UIImage(named: "SliderThumb");
+        slider.setThumbImage(thumbImage, forState: .Normal);
+        
         if !SharedData.isDebugOn {
             debugLabel.hidden = true;
         } else {
@@ -226,6 +229,7 @@ class ViewController: UIViewController, AddNewScoreTableViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
     }
     
@@ -253,6 +257,19 @@ class ViewController: UIViewController, AddNewScoreTableViewControllerDelegate {
             
             destinationVC.delegate = self;
         }
+    }
+    
+    override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue? {
+        if let id = identifier {
+            if id == "UnwindSegueIdentifier" {
+                let unwindSegue = CustomSegueUnwind(identifier: id, source: fromViewController, destination: toViewController, performHandler: { () -> Void in
+                    
+                });
+                return unwindSegue;
+            }
+        }
+        
+        return super.segueForUnwindingToViewController(toViewController, fromViewController: fromViewController, identifier: identifier);
     }
 
 }

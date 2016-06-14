@@ -12,6 +12,8 @@
 		240639241D0358B600C773C0 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240639231D0358B600C773C0 /* Difficulty.swift */; };
 		240639261D03595800C773C0 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240639251D03595800C773C0 /* SharedData.swift */; };
 		241A9BDC1D02E1E000CCCF18 /* goodfoot.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 241A9BDB1D02E1E000CCCF18 /* goodfoot.ttf */; };
+		2430F11F1D10AEE000A219C0 /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430F11E1D10AEE000A219C0 /* CustomSegue.swift */; };
+		2430F1211D10AEED00A219C0 /* CustomSegueUnwind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430F1201D10AEED00A219C0 /* CustomSegueUnwind.swift */; };
 		243C61591D0C484800895F49 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C61581D0C484800895F49 /* Score.swift */; };
 		24BB3DC61CFB900F00B0A38E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BB3DC51CFB900F00B0A38E /* AppDelegate.swift */; };
 		24BB3DC81CFB900F00B0A38E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BB3DC71CFB900F00B0A38E /* ViewController.swift */; };
@@ -29,6 +31,8 @@
 		240639231D0358B600C773C0 /* Difficulty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 		240639251D03595800C773C0 /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		241A9BDB1D02E1E000CCCF18 /* goodfoot.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = goodfoot.ttf; path = ../../../Library/Fonts/goodfoot.ttf; sourceTree = "<group>"; };
+		2430F11E1D10AEE000A219C0 /* CustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegue.swift; sourceTree = "<group>"; };
+		2430F1201D10AEED00A219C0 /* CustomSegueUnwind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegueUnwind.swift; sourceTree = "<group>"; };
 		243C61581D0C484800895F49 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		24BB3DC21CFB900F00B0A38E /* Bulls_Eye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bulls_Eye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BB3DC51CFB900F00B0A38E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +69,15 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		2430F1221D10AEF200A219C0 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				2430F11E1D10AEE000A219C0 /* CustomSegue.swift */,
+				2430F1201D10AEED00A219C0 /* CustomSegueUnwind.swift */,
+			);
+			name = Segues;
+			sourceTree = "<group>";
+		};
 		24BB3DB91CFB900F00B0A38E = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +108,7 @@
 				240639231D0358B600C773C0 /* Difficulty.swift */,
 				243C61581D0C484800895F49 /* Score.swift */,
 				240639251D03595800C773C0 /* SharedData.swift */,
+				2430F1221D10AEF200A219C0 /* Segues */,
 				24BB3DC91CFB900F00B0A38E /* Main.storyboard */,
 				24BB3DCC1CFB900F00B0A38E /* Assets.xcassets */,
 				24BB3DCE1CFB900F00B0A38E /* LaunchScreen.storyboard */,
@@ -248,10 +262,12 @@
 				240639201D03307B00C773C0 /* FirstPageViewController.swift in Sources */,
 				243C61591D0C484800895F49 /* Score.swift in Sources */,
 				240639221D0340B300C773C0 /* optionsViewController.swift in Sources */,
+				2430F1211D10AEED00A219C0 /* CustomSegueUnwind.swift in Sources */,
 				24DCFCDF1D0DE1020067D18B /* AddNewScoreTableViewController.swift in Sources */,
 				240639241D0358B600C773C0 /* Difficulty.swift in Sources */,
 				24EB35951D0C3172006B68AC /* LaderboardTableViewController.swift in Sources */,
 				24BB3DC81CFB900F00B0A38E /* ViewController.swift in Sources */,
+				2430F11F1D10AEE000A219C0 /* CustomSegue.swift in Sources */,
 				24BB3DC61CFB900F00B0A38E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
